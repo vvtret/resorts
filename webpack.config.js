@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-const autoprefixerBrowser = ['last 2 versions', 'ie >= 9', 'Android >= 2.3', 'ios >= 7'];
+const autoprefixerBrowser = ['last 10 versions', 'ie >= 9', 'Android >= 2.3', 'ios >= 7'];
 
 module.exports = {
 	mode: 'development',

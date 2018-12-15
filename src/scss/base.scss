@@ -1,5 +1,4 @@
-$bg-color: green;
+@import "main.scss";
+@import "components.scss";
+@import "layout.scss";
 
-body {
-	background: $bg-color;
-}
