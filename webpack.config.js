@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const autoprefixerBrowser = ['last 10 versions', 'ie >= 9', 'Android >= 2.3', 'ios >= 7'];
 
@@ -46,10 +47,30 @@ module.exports = {
 						},
 					]
 				})
+			},
+			{
+				test: /\.html$/,
+				use: ['html-loader']
+			},
+			{
+				test: /\.(gif|png|jpe?g|svg)$/i,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[exp]',
+							outputPath: 'img/',
+							publicPath: 'img/'
+						}
+					}
+				]
 			}
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('style.css')
+		new ExtractTextPlugin('style.css'),
+		new HtmlWebpackPlugin({
+			template: 'src/index.html'
+		})
 	]
 };
