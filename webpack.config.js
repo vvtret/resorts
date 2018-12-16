@@ -49,18 +49,26 @@ module.exports = {
 				})
 			},
 			{
-				test: /\.html$/,
-				use: ['html-loader']
-			},
-			{
 				test: /\.(gif|png|jpe?g|svg)$/i,
 				use: [
 					{
 						loader: 'file-loader',
 						options: {
-							name: '[name].[exp]',
+							name: '[name].[ext]',
 							outputPath: 'img/',
 							publicPath: 'img/'
+						}
+					}
+				]
+			},
+			{
+				test: /\.(jpe?g|png)$/i,
+				use: [
+					{
+						loader: 'responsive-loader',
+						options: {
+							adapter: require('responsive-loader/sharp'),
+							name: 'img/[name]-[width].[ext]'
 						}
 					}
 				]
