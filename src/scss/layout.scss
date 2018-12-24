@@ -19,6 +19,12 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@media (max-width: $bd-smallest) {
+		flex-wrap: wrap;
+		height: 11rem;
+		align-content: space-around;
+	}
 }
 .content {
 	display: flex;
@@ -48,6 +54,9 @@
 	@media (max-width: $bd-medium) {
 		padding: 3rem;
 	}
+	@media (max-width: $bd-small) {
+		flex-direction: column;
+	}
 }
 .description {
 	background-color: #fff;
@@ -59,6 +68,10 @@
 	@media (max-width: $bd-medium) {
 		padding: 2rem;
 		margin-right: 3rem;
+	}
+	@media (max-width: $bd-small) {
+		margin-right: 0;
+		margin-bottom: 3rem;
 	}
 }
 .user-reviews {
