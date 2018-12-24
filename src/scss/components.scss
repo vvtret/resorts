@@ -91,7 +91,7 @@
 		fill: var(--color-grey-dark-2);
 	}
 
-	&__notification{
+	&__notification {
 		font-size: .8rem;
 		height: 2rem;
 		width: 2rem;
@@ -119,6 +119,7 @@
 	}
 
 }
+
 ///SIDE NAV NAVIGATION
 .side-nav {
 	font-size: 1.4rem;
@@ -143,8 +144,8 @@
 		width: 3px;
 		transform: scaleY(0);
 		transition: transform .2s,
-					width .4s cubic-bezier(0, 0.045, 0.355, 1) .2s,
-					background-color .1s;
+		width .4s cubic-bezier(0, 0.045, 0.355, 1) .2s,
+		background-color .1s;
 	}
 
 	&__item:hover::before,
@@ -158,7 +159,7 @@
 	}
 
 	&__link:link,
-	&__link:visited{
+	&__link:visited {
 		color: var(--color-grey-light-1);
 		text-decoration: none;
 		text-transform: uppercase;
@@ -227,7 +228,7 @@
 
 	}
 
-	&__location{
+	&__location {
 		font-size: 1.2rem;
 		display: flex;
 		align-items: center;
@@ -299,7 +300,7 @@
 	}
 	50% {
 		transform: scale(1.05);
-		box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
+		box-shadow: 0 1rem 4rem rgba(0, 0, 0, .25);
 	}
 	100% {
 		transform: scale(1);
@@ -361,7 +362,7 @@
 		border-radius: 50%;
 		border: 3px solid #fff;
 
-		&:not(:last-child){
+		&:not(:last-child) {
 			margin-right: -1.5rem;
 		}
 	}
@@ -426,5 +427,68 @@
 		color: var(--color-grey-light-2);
 		font-family: sans-serif;
 		z-index: 1;
+	}
+}
+
+///CTA
+.cta {
+	padding: 3.5rem 0;
+	text-align: center;
+
+	&__book-now {
+		font-size: 2rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		margin-bottom: 2.5rem;
+	}
+}
+
+.btn {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	font-weight: 300;
+	border: none;
+	border-radius: 100px;
+	background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	outline: none;
+	overflow: hidden;
+
+	&__visible {
+		display: inline-block;
+		padding: 2rem 7.5rem;
+		height: 100%;
+		width: 100%;
+		transition: all .2s;
+	}
+
+	&__invisible {
+		display: inline-block;
+		position: absolute;
+		padding: 2rem 0rem;
+		height: 100%;
+		width: 100%;
+		top: -100%;
+		left: 0;
+		transition: all .2s;
+	}
+
+	&:hover {
+		background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+	}
+
+	&:hover &__visible {
+		transform: translateY(100%);
+	}
+
+	&:hover &__invisible {
+		top: 0;
+	}
+
+	&:focus {
+		outline: none;
+		animation: pulsate 1s infinite;
 	}
 }
